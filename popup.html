@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ETLab Survey Autofiller</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        width: 280px;
+        font-family: "Segoe UI", Arial, sans-serif;
+        font-size: 13px;
+        color: #222;
+        background: #fff;
+      }
+
+      header {
+        background: #1a73e8;
+        color: #fff;
+        padding: 10px 14px;
+        font-weight: 700;
+        font-size: 14px;
+        letter-spacing: 0.2px;
+      }
+
+      .content {
+        padding: 14px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      label.field-label {
+        font-size: 11px;
+        font-weight: 700;
+        color: #555;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 4px;
+        display: block;
+      }
+
+      select {
+        width: 100%;
+        padding: 6px 8px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 13px;
+        background: #f9f9f9;
+        color: #222;
+        cursor: pointer;
+        outline: none;
+      }
+
+      select:focus {
+        border-color: #1a73e8;
+      }
+
+      .toggle-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+        user-select: none;
+      }
+
+      .toggle-row input[type="checkbox"] {
+        width: 14px;
+        height: 14px;
+        accent-color: #1a73e8;
+        cursor: pointer;
+      }
+
+      .toggle-row span {
+        font-size: 13px;
+        color: #333;
+      }
+
+      .save-btn {
+        padding: 8px 0;
+        background: #1a73e8;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.15s;
+        width: 100%;
+      }
+
+      .save-btn:hover {
+        background: #1558b0;
+      }
+
+      .saved-msg {
+        font-size: 11px;
+        color: #2a7a3b;
+        text-align: center;
+        min-height: 14px;
+      }
+
+      hr {
+        border: none;
+        border-top: 1px solid #eee;
+      }
+
+      .note {
+        font-size: 11px;
+        color: #777;
+        line-height: 1.5;
+      }
+    </style>
+  </head>
+  <body>
+    <header>📋 ETLab Survey Autofiller</header>
+    <div class="content">
+      <div>
+        <label class="field-label" for="popup-mode">Default fill mode</label>
+        <select id="popup-mode">
+          <option value="All Positive">All Positive</option>
+          <option value="All Negative">All Negative</option>
+          <option value="Random">Random</option>
+          <option value="Mostly Positive">Mostly Positive</option>
+          <option value="Mostly Negative">Mostly Negative</option>
+        </select>
+      </div>
+
+      <label class="toggle-row">
+        <input type="checkbox" id="popup-autosubmit" />
+        <span>Auto-submit after filling</span>
+      </label>
+
+      <hr />
+
+      <button class="save-btn" id="popup-save">Save preferences</button>
+      <div class="saved-msg" id="popup-saved-msg"></div>
+
+      <p class="note">
+        These defaults are used by the floating panel that appears on ETLab
+        survey pages (<code>*.etlab.in/survey/*</code>).
+      </p>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>

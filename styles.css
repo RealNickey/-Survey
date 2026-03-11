@@ -1,0 +1,132 @@
+/* ──────────────────────────────────────────────────────────
+   ETLab Survey Autofiller – Floating Panel Styles
+   Injected automatically via content_scripts in manifest.json
+   ────────────────────────────────────────────────────────── */
+
+#etlab-autofiller-panel {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 2147483647; /* maximum z-index */
+  width: 260px;
+  background: #ffffff;
+  border: 1px solid #d0d0d0;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 13px;
+  color: #222;
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+
+#etlab-autofiller-panel:hover {
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.24);
+}
+
+/* ── Header ── */
+#etlab-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #1a73e8;
+  color: #fff;
+  padding: 8px 12px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: default;
+}
+
+#etlab-close {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 2px;
+  opacity: 0.85;
+  transition: opacity 0.15s;
+}
+
+#etlab-close:hover {
+  opacity: 1;
+}
+
+/* ── Body ── */
+#etlab-body {
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#etlab-body label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 2px;
+}
+
+#etlab-mode-select {
+  width: 100%;
+  padding: 5px 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 13px;
+  background: #f9f9f9;
+  color: #222;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+#etlab-mode-select:focus {
+  border-color: #1a73e8;
+}
+
+#etlab-autosubmit-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #333;
+  cursor: pointer;
+  user-select: none;
+}
+
+#etlab-autosubmit-check {
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+  accent-color: #1a73e8;
+}
+
+#etlab-fill-btn {
+  padding: 8px 0;
+  background: #1a73e8;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+  letter-spacing: 0.3px;
+}
+
+#etlab-fill-btn:hover {
+  background: #1558b0;
+}
+
+#etlab-fill-btn:active {
+  transform: scale(0.97);
+}
+
+#etlab-status {
+  font-size: 11px;
+  color: #2a7a3b;
+  min-height: 14px;
+  word-break: break-word;
+}

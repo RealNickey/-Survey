@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "ETLab Survey Autofiller",
+  "version": "1.0.0",
+  "description": "Auto-fills and optionally auto-submits faculty feedback/survey forms on ETLab domains.",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "content_scripts": [
+    {
+      "matches": ["*://*.etlab.in/survey/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "ETLab Survey Autofiller"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
